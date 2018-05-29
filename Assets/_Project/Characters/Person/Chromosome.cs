@@ -9,7 +9,7 @@ public class Chromosome : MonoBehaviour {
     public float R { get; set; }
     public float G { get; set; }
     public float B { get; set; }
-    public float TimeToDie { get; set; }
+    public float SurvivalTime { get; set; }
     #endregion
 
     #region Fields
@@ -21,7 +21,7 @@ public class Chromosome : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        TimeToDie = 0f;
+        SurvivalTime = 0f;
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2d = GetComponent<Collider2D>();
         spriteRenderer.color = new Color(R, G, B);
@@ -36,8 +36,8 @@ public class Chromosome : MonoBehaviour {
     private void OnMouseDown ()
     {
         isDead = true;
-        TimeToDie = PopulationManager.TimeElapsed;
-        Debug.LogFormat("Dead at: {0}", TimeToDie);
+        SurvivalTime = PopulationManager.TimeElapsed;
+        Debug.LogFormat("Dead at: {0}", SurvivalTime);
         spriteRenderer.enabled = false;
         collider2d.enabled = false;
     }
