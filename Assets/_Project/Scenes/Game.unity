@@ -143,6 +143,9 @@ MonoBehaviour:
   personPrefab: {fileID: 1734903543758822, guid: 51d6f09c4aada4554a972165211005c2,
     type: 2}
   populationSize: 10
+  trialTimeSeconds: 12
+  minScale: 0.1
+  maxScale: 0.5
 --- !u!4 &33987615
 Transform:
   m_ObjectHideFlags: 0
