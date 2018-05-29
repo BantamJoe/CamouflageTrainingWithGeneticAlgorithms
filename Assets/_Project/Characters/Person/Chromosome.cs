@@ -24,6 +24,7 @@ public class Chromosome : MonoBehaviour {
         TimeToDie = 0f;
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2d = GetComponent<Collider2D>();
+        spriteRenderer.color = new Color(R, G, B);
 	}
 	
 	// Update is called once per frame
@@ -35,8 +36,7 @@ public class Chromosome : MonoBehaviour {
     private void OnMouseDown ()
     {
         isDead = true;
-        // TODO: Implement population manager. 
-        // TimeToDie = PopulationNamager.elapsed;
+        TimeToDie = PopulationManager.TimeElapsed;
         Debug.LogFormat("Dead at: {0}", TimeToDie);
         spriteRenderer.enabled = false;
         collider2d.enabled = false;
