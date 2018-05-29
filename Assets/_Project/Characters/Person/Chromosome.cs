@@ -9,6 +9,10 @@ public class Chromosome : MonoBehaviour {
     public float R { get; set; }
     public float G { get; set; }
     public float B { get; set; }
+
+    // Gene for scale.
+    public float Scale { get; set; }
+
     public float SurvivalTime { get; set; }
     #endregion
 
@@ -25,6 +29,7 @@ public class Chromosome : MonoBehaviour {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2d = GetComponent<Collider2D>();
         spriteRenderer.color = new Color(R, G, B);
+        this.transform.localScale = new Vector2(Scale, Scale);
 	}
 	
 	// Update is called once per frame
